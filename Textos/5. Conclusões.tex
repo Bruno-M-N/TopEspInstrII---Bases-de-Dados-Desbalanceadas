@@ -1,0 +1,25 @@
+% % CONCLUSÕES
+
+% % Texto.
+
+% % Texto. Quais as conclusões baseada nos seus resultados. Relembrando no capítulo de metodologia explicaram como “foi feito o experimento”, no capítulo de resultados e discussões explicaram e apresentaram os resultados e discussões do que foi “feito” no capítulo anterior e agora apresentam uma conclusão final sobre o trabalho. Evitar textos do tipo: o trabalho foi válido, aprendemos bastante sobre o conteúdo....isso não é conclusão de um relatório científico! Conclusões sobre o trabalho experimental apenas! Sugiro que façam perguntas para os professores da disciplina e até mostrar com antecedência um dos relatórios.
+
+
+% % O processo de elaboração de uma controladora \textit{fuzzy} é um processo iterativo, no sentido que diversas escolhas são feitas. 
+
+% % Na controladora de taxa de anestesia, por exemplo, verificou-se que seria interessante reduzir o desvio-padrão das funções gaussianas utilizadas para o método de deffuzyficação do centroide.
+
+% % Para a câmera, o sistema de inferência \textit{fuzzy} mostrou alguma flexibilidade, conseguindo intuir um comportamento intermediário adequado mesmo com a ausência de uma regra especifica para a situação encontrada, através de uma "médio" entre duas regras. A resposta obtida seria provavelmente melhor com a existência dessa regra ausente, mas seria possível modificar os valores limites das funções de pertinência ou aumentar seu número para levar esse caso mais em conta.
+
+% % Para a controladora do ar-condicionado simplificado, diferentes funções de pertinência foram testadas, tendo sido julgado mais vantajoso o uso de funções triangulares, por serem mais simples do ponto de vista computacional, uma vez que o resultado obtido era o mesmo ao utilizar as gaussianas. O número de regras foi também reduzido de $9$ para $7$, o que eliminou perturbações na saída. O método do centroide foi aqui o que teve a melhor performance do ponto de vista do que um usuário esperaria.
+
+
+% No exercício 4, poderia-se utilizar um procedimento alternativo com os dados faltantes. Poderia-se utilizar os dados da mesma data nos outros anos e/ou do mesmo dia da semana nas semanas seguintes e anteriores e/ou dos dias ou horas anteriores e posteriores, para estimar os dados faltantes. Uma analise dos feriados locais permitiria também estimar melhor esses dados em caso de um feriado. Como o número de dados era relativamente pequeno frente ao tamanho da base, no entanto, optou-se por ignorar os horários em que havia falta de dados.
+
+% Observa-se que foi necessário fazer um compromisso na escolha de um k, uma vez que não era possível maximizar o coeficiente de Silhueta e diminuir a dispersão na métrica WCSS ao mesmo tempo.
+
+% De todo modo, nota-se que a hipótese de $2$ padrões de consumo principais é realista, visto que o coeficiente de silhueta foi maior para $k = 2$ tanto para o método k-means quanto para o método K-memoids. Um, que representa um consumo de energia menor, corresponde a situação em que os moradores da casa estão dormindo ou fora de casa. O segundo cluster corresponde à situação em que luzes, eletrodomésticos e demais aparelhos eletrônicos são utilizados, e há um maior consumo de energia elétrica. Dessa forma, as técnicas de \textit{clustering} fornecem informações sobre atividade na casa: moradores ausentes/ dormindo ou realizando atividades.
+
+% Esse \textit{trade-off} entre WCSS e coeficiente de Silhueta se mostra evidente também no exercício 16, onde há de se arbitrar um valor k.
+
+% No exercício 15 observa-se uma base mais comportada, com número conhecido de clusters. Nesse caso, não se procura um valor k, mas um método que forneça um agrupamento mais condizente. Conforme ensaiado, tendo os valores reais de pertencimento de grupo de cada amostra, pode-se avaliar a capacidade. Nota-se nesse caso que a normalização é útil, porém por vezes pode interferir de forma indesejada, trazendo reduzindo a relevância no cálculo de variáveis profundamente importantes. A normalização, portanto deve ser vista com certo cuidado.

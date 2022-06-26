@@ -1,0 +1,112 @@
+\documentclass[journal,article,submit,moreauthors,pdftex]{_Definitions/mdpi} 
+
+\usepackage{mathptmx}
+
+\firstpage{1} 
+\makeatletter 
+\makeatother
+\pubvolume{xx}
+\issuenum{1}
+\articlenumber{5}
+\pubyear{2022}
+\copyrightyear{2022}
+%\externaleditor{Academic Editor: name}
+\history{Received: date; Accepted: date; Published: date}
+%\updates{yes} % If there is an update available, un-comment this line
+
+\usepackage{svg}
+
+\usepackage{todonotes}
+% \usepackage{enumerate}
+% \usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{scalefnt}
+\usepackage{graphics}
+\usepackage{adjustbox} 
+\usepackage{tabularx}  % parada de tabelas (not used)
+\usepackage{tabulary}  % parada de tabelas (permite quebrar o texto de uma célula usando 'L')
+\usepackage{siunitx}   % Notação Científica
+\usepackage{textcomp}
+\usepackage{bigstrut}  % parada de tabelas
+\usepackage{booktabs}  % parada de tabelas
+%  adds PDF support to the landscape environment of package lscape, by setting the PDF /Rotate page attribute. Pages with this attribute will be displayed in landscape orientation by conforming PDF viewers.
+\usepackage{pdflscape} 
+
+% \usepackage{lscape}
+\usepackage{tikz} % dia
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[section]{placeins}
+\usepackage{pdfpages}
+%\usepackage[opções]{subfigure}
+\usepackage{subcaption}
+\usepackage{minted}
+
+
+\usepackage[portuguese]{babel}
+
+\usepackage{csquotes} % Para biblatex
+\usepackage[backend=biber,
+citestyle=authoryear,
+sorting=none,
+maxcitenames=2,
+% uniquename=false,
+uniquename=init,
+giveninits=true,
+natbib]{biblatex}
+% \bibliographystyle{_Definitions/mdpi.sty}
+\addbibresource{bibliography.bib}
+
+\newcommand{\MATLAB}{MATLAB\textsuperscript{\textregistered}}
+\newcommand{\LabVIEW}{LabVIEW\textsuperscript{TM}}
+\newcommand{\Gym}{\textit{Gym}}
+\newcommand{\Multisim}{Multisim\textsuperscript{TM}}
+\newcommand{\Arduino}{Arduino\textsuperscript{TM}}
+\renewcommand{\lstlistingname}{Código}
+\usepackage[labelsep=period,labelfont={bf,small}]{caption}
+% For tables
+%\newcolumntype{L}{>{\centering\arraybackslash$}m{3cm}<{$}} % math-mode version of "l" column type
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+\newcolumntype{M}[1]
+{>{$}m{#1}<{$}} % math-mode version of "m" column type
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\def\stdsize{2.5cm}
+
+\newcolumntype{H}
+{m{\stdsize}}
+
+\newcolumntype{B}
+{M{\stdsize}}
+
+\lstset{
+  language=python,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  stringstyle=\color{magenta},
+  commentstyle=\color{red},
+  extendedchars=true,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2,
+  numbers=right,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  breaklines=true,
+  backgroundcolor=\color{green!10},
+  breakautoindent=true,
+  captionpos=b,
+  xleftmargin=0pt,
+  keepspaces=true,
+}
+
+
+\usepackage{amsmath}% equation, \numberwithin{equation}, \dfrac{•}{•}
+
+\newcommand{\sen}{\mathop\mathrm{sen}\nolimits}

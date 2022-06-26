@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX
+
+Online LaTeX Equation Editor - Codecogs LaTeX equation
+https://latex.codecogs.com/eqneditor/editor.php
+
+Detexify LaTeX handwritten symbol recognition
+https://detexify.kirelabs.org/classify.html
+
+Latex - Basic elements for writing a book/thesis -  Mauricio Fernández
+https://www.youtube.com/watch?v=Qjp-a2uZWZc
+
+% Tables LaTeX
+Create LaTeX tables online – TablesGenerator.com
+https://www.tablesgenerator.com/
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\section{} 
+
+% a subsection with a label. DO NOT put the label if you don't use it afterwards (with a \ref{})
+\subsection{}\label{sec:}
+
+% paragraph with title
+\paragraph{title of paragraph}
+it is good to remember the command 
+\footnote{which allows you to make footnotes}
+
+% unordered list
+\begin{itemize}
+    \item 
+\end{itemize}
+
+% ordered list with numbers
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+% description type list (like a dictionary)
+\begin{description}
+    \item[titre en gras] description du titre
+\end{description}
+
+%Citações
+Segundo \citet{vim2012vocabulario}, (citação quando o texto é de apenas um autor) texto texto texto. De acordo com \citet{balbinot2019instrumentacao}, texto texto texto (citação quando o texto é de dois autores). Para mais de dois autores usar et al., por exemplo, \citet{kleijnen_state---art_2005}, texto texto....
+
+% Nesse documento LaTex, há 3 opções para fazer citação. São elas: \cite{} (separa o nome do(s) autor(es) e do ano por vírgula), \citet{} (ano em parentesis) e \citep{} (autor(es) e ano em parentesis).
+
+% Figuras
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figuras/figura_exemplo.png}
+    \caption{Fluxograma representando a rotina desenvolvida no (...).\\\textbf{Fonte -} Fonte da figura.}
+    \label{fluxograma_N}
+\end{figure}
+
+% Tabelas
+% NOTA: é possível utilizar o site https://www.tablesgenerator.com/ para gerar tabelas LaTeX  pré-formatadas rapidamente
+% Baixe o arquivo "example-Table-to-be-loaded-in-Tables-Generator-com.tgn" na pasta "Tabelas"
+% Clique em File e selecione Load table... e depois selecione o arquivo "example-Table-to-be-loaded-in-Tables-Generator-com.tgn"
+%
+% Adicione um "H" no \begin{table}[] da tabela gerada, de forma a obter \begin{table}[H]
+%
+%
+% No preâmbulo do documento (o que vem antes do \begin{document}), adicione o pacote booktabs com o comando \usepackage{booktabs}, se isso ainda não tiver sido feito, e qualquer outro que apareça em "Result" após clicar no botão "Generate" no site. Nesse documento, booktabs já foi adicionado em "pacotex.tex" na pasta "_Header"
+%
+% Também é possível copiar tabelas com múltiplas colunas diretamente no site, com um ctrl+c/ ctrl+v
+% Em Edit, há um mecanismo de Find and Replace... (Busca e substituição...) que pode ser útil
+
+\begin{table}[]
+\centering
+\begin{tabular}{@{}ccc@{}}
+\toprule
+\textbf{Title 1} & \textbf{Title 2} & \textbf{Title 3} \\ \midrule
+Entry 1          & Data             & Data             \\
+Entry 2          & Data             & Data             \\ \bottomrule
+\end{tabular}
+\caption{This is a table caption. \\ \textbf{Fonte -} Fonte da tabela.}
+\label{tab:my-table}
+\end{table}
+
+% % image
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=.8\linewidth]{\imgPath/filename}
+%     \caption{Caption}
+%     \label{fig:my_label} % to be used only if you use it with the command \ref{}
+% \end{figure}
+
+% % table from a .pdf file
+% \begin{table}[H]
+%     \centering
+%     \includegraphics[width=.8\linewidth]{\imgPath/filename}
+%     \captionof{Caption}
+%     \label{tab:my_label} % to be used only if you use it with the command \ref{}
+% \end{table}
+

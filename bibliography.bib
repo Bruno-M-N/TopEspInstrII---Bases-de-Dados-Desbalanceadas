@@ -1,0 +1,586 @@
+% If you publish material based on databases obtained from this repository, then, in your acknowledgements, please note the assistance you received by using this repository. This will help others to obtain the same data sets and replicate your experiments. We suggest the following pseudo-APA reference format for referring to this repository:
+
+%     Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
+
+% Here is a BiBTeX citation as well:
+@misc{Dua:2019 ,
+author = "Dua, Dheeru and Graff, Casey",
+year = "2017",
+title = "{UCI} Machine Learning Repository",
+url = "http://archive.ics.uci.edu/ml",
+institution = "University of California, Irvine, School of Information and Computer Sciences" } 
+
+% A few data sets have additional citation requests. These requests can be found on the bottom of each data set's web page. 
+
+@article{street_nuclear_1999,
+	title = {Nuclear {Feature} {Extraction} {For} {Breast} {Tumor} {Diagnosis}},
+	volume = {1993},
+	doi = {10.1117/12.148698},
+	abstract = {Interactive image processing techniques, along with a linear-programming-based inductive classifier, have been used to create a highly accurate system for diagnosis of breast tumors. A small fraction of a fine needle aspirate slide is selected and digitized. With an interactive interface, the user initializes active contour models, known as snakes, near the boundaries of a set of cell nuclei. The customized snakes are deformed to the exact shape of the nuclei. This allows for precise, automated analysis of nuclear size, shape and texture. Ten such features are computed for each nucleus, and the mean value, largest (or "worst") value and standard error of each feature are found over the range of isolated cells. After 569 images were analyzed in this fashion, different combinations of features were tested to find those which best separate benign from malignant samples. Ten-fold cross-validation accuracy of 97\% was achieved using a single separating plane on three of the thirty ...},
+	journal = {Proc. Soc. Photo-Opt. Inst. Eng.},
+	author = {Street, N. and Wolberg, W. H. and Mangasarian, O. L.},
+	month = jan,
+	year = {1999},
+	file = {Full Text PDF:D\:\\User\\Zotero\\storage\\PA62QJZF\\Street et al. - 1999 - Nuclear Feature Extraction For Breast Tumor Diagno.pdf:application/pdf},
+}
+
+@misc{wolberg_uci_1995,
+	title = {{UCI} {Machine} {Learning} {Repository}: {Breast} {Cancer} {Wisconsin} ({Diagnostic}) {Data} {Set}},
+	url = {https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29},
+	urldate = {2022-06-24},
+	author = {Wolberg, W. H. and Street, N. and Mangasarian, O. L.},
+	month = nov,
+	year = {1995},
+}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+  
+@misc{hebrail_uci_2012,
+	title = {{UCI} {Machine} {Learning} {Repository}: {Individual} household electric power consumption {Data} {Set}},
+	url = {https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption},
+	abstract = {Measurements of electric power consumption in one household with a one-minute sampling rate over a period of almost 4 years. Different electrical quantities and some sub-metering values are available.},
+	urldate = {2022-03-26},
+	journal = {UCI Machine Learning Repository},
+	author = {Hebrail, G. and Berard, A.},
+	month = aug,
+	year = {2012},
+}
+
+@inproceedings{zhang_forecasting_2018,
+	title = {Forecasting {Residential} {Energy} {Consumption}: {Single} {Household} {Perspective}},
+	shorttitle = {Forecasting {Residential} {Energy} {Consumption}},
+	doi = {10.1109/ICMLA.2018.00024},
+	abstract = {With the development of smart electricity metering technologies, huge amounts of consumption data can be retrieved on a daily and hourly basis. Energy consumption forecasting facilitates electricity demand management and utilities load planning. Most studies have been focussed on commercial customers or residential building-level energy consumption, or have used behavioral and occupancy sensor data to characterize an individual household's electrical consumption. This study has analyzed energy consumption at single household level using smart meter data to improve residential energy services and gain insights into planning demand response programs. Electricity consumption for anonymous individual households has been predicted using a Support Vector Regression (SVR) modelling with both daily and hourly data granularity. The electricity usage data set for 2014 to 2016 was obtained from a Canadian utility company. Exploratory data analysis (EDA) was used for data visualization and feature selection. The analysis presented here demonstrates that forecasting residential energy consumption for individual households is feasible, but the accuracy is highly dependable on household behaviour variability.},
+	booktitle = {2018 17th {IEEE} {International} {Conference} on {Machine} {Learning} and {Applications} ({ICMLA})},
+	author = {Zhang, Xiaoou Monica and Grolinger, Katarina and Capretz, Miriam A. M. and Seewald, Luke},
+	month = dec,
+	year = {2018},
+	keywords = {Buildings, Data models, Energy consumption, Energy consumption forecasting, Forecasting, Meteorology, Predictive models, residential energy consumption, smart meters, Support vector machines, support vector regression},
+	pages = {110--117},
+}
+
+
+
+@article{jain_forecasting_2014,
+	title = {Forecasting energy consumption of multi-family residential buildings using support vector regression: {Investigating} the impact of temporal and spatial monitoring granularity on performance accuracy},
+	volume = {123},
+	issn = {0306-2619},
+	shorttitle = {Forecasting energy consumption of multi-family residential buildings using support vector regression},
+	url = {https://www.sciencedirect.com/science/article/pii/S0306261914002013},
+	doi = {10.1016/j.apenergy.2014.02.057},
+	abstract = {Buildings are the dominant source of energy consumption and environmental emissions in urban areas. Therefore, the ability to forecast and characterize building energy consumption is vital to implementing urban energy management and efficiency initiatives required to curb emissions. Advances in smart metering technology have enabled researchers to develop “sensor based” approaches to forecast building energy consumption that necessitate less input data than traditional methods. Sensor-based forecasting utilizes machine learning techniques to infer the complex relationships between consumption and influencing variables (e.g., weather, time of day, previous consumption). While sensor-based forecasting has been studied extensively for commercial buildings, there is a paucity of research applying this data-driven approach to the multi-family residential sector. In this paper, we build a sensor-based forecasting model using Support Vector Regression (SVR), a commonly used machine learning technique, and apply it to an empirical data-set from a multi-family residential building in New York City. We expand our study to examine the impact of temporal (i.e., daily, hourly, 10min intervals) and spatial (i.e., whole building, by floor, by unit) granularity have on the predictive power of our single-step model. Results indicate that sensor based forecasting models can be extended to multi-family residential buildings and that the optimal monitoring granularity occurs at the by floor level in hourly intervals. In addition to implications for the development of residential energy forecasting models, our results have practical significance for the deployment and installation of advanced smart metering devices. Ultimately, accurate and cost effective wide-scale energy prediction is a vital step towards next-generation energy efficiency initiatives, which will require not only consideration of the methods, but the scales for which data can be distilled into meaningful information.},
+	language = {en},
+	urldate = {2022-03-26},
+	journal = {Applied Energy},
+	author = {Jain, Rishee K. and Smith, Kevin M. and Culligan, Patricia J. and Taylor, John E.},
+	month = jun,
+	year = {2014},
+	keywords = {Forecasting, Machine learning, Monitoring, Prediction, Residential building, Support vector regression},
+	pages = {168--178},
+}
+
+
+@article{beckel_revealing_cluster_2014,
+	title = {Revealing household characteristics from smart meter data},
+	volume = {78},
+	issn = {0360-5442},
+	url = {https://www.sciencedirect.com/science/article/pii/S0360544214011748},
+	doi = {10.1016/j.energy.2014.10.025},
+	abstract = {Utilities are currently deploying smart electricity meters in millions of households worldwide to collect fine-grained electricity consumption data. We present an approach to automatically analyzing this data to enable personalized and scalable energy efficiency programs for private households. In particular, we develop and evaluate a system that uses supervised machine learning techniques to automatically estimate specific “characteristics” of a household from its electricity consumption. The characteristics are related to a household's socio-economic status, its dwelling, or its appliance stock. We evaluate our approach by analyzing smart meter data collected from 4232 households in Ireland at a 30-min granularity over a period of 1.5 years. Our analysis shows that revealing characteristics from smart meter data is feasible, as our method achieves an accuracy of more than 70\% over all households for many of the characteristics and even exceeds 80\% for some of the characteristics. The findings are applicable to all smart metering systems without making changes to the measurement infrastructure. The inferred knowledge paves the way for targeted energy efficiency programs and other services that benefit from improved customer insights. On the basis of these promising results, the paper discusses the potential for utilities as well as policy and privacy implications.},
+	language = {en},
+	urldate = {2022-03-26},
+	journal = {Energy},
+	author = {Beckel, Christian and Sadamori, Leyna and Staake, Thorsten and Santini, Silvia},
+	month = dec,
+	year = {2014},
+	keywords = {Automated customer segmentation, Data-driven energy efficiency, Domestic electricity consumption, Electricity load profiles, Supervised machine learning},
+	pages = {397--410},
+}
+
+
+
+@misc{mathworks_foundations_fuzzy_logic_nodate,
+	title = {Foundations of {Fuzzy} {Logic} - {MATLAB} \& {Simulink}},
+	url = {https://www.mathworks.com/help/fuzzy/foundations-of-fuzzy-logic.html},
+	urldate = {2022-03-06},
+	journal = {MathWorks},
+	author = {MathWorks},
+}
+
+
+
+@misc{enunciado,
+	title = {Aula 02b - Inteligência Comptacional: lógica Fuzzy: Projeto Completo de uma Controladora Fuzzy},
+	abstract = {Enunciado dos projetos para o trabalho Secundário 01 do Bloco 01 - fuzzy.},
+	journal = {Universidade Federal do Rio Grande do Sul.},
+	author = {Balbinot, A.},
+	month = jan,
+	year = {2022},
+}
+
+
+// Balbinot. A. Aula 02b. Enunciado dos projetos para o trabalho Secundário 01 do Bloco 01 - fuzzy. Universidade Federal do Rio Grande do Sul. ENG04019 - Tópicos Especiais em Instrumentação: Inteligência Computacional I. 08 fev 2022
+
+
+
+
+
+
+@book{balbinot2019instrumentacao,
+    author = {Balbinot, Alexandre and Brusamarello, Valner João},
+    edition = {Third},
+    publisher = {LTG},
+    title = {Instrumentação e fundamentos de medidas},
+    year = {2019}
+}
+
+@article{vim2012vocabulario,
+    title = {Vocabulário Internacional de Metrologia: Conceitos fundamentais e gerais e termos  associados (VIM 2012)},
+    author = {INMETRO},
+    year = {2012}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introdução (justificativa) e Revisão bibliográfica
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instrumentos
+@manual{manual-barometros-serie-ssb04,
+	title = {Barômetros série SSB04},
+	url = {https://sigmasensors.com.br/produtos/barometros-serie-ssb04},
+	urldate = {2021-10-21},
+	author = {{Sigma Sensors}},
+	year = {2019},
+}
+
+@manual{manual_thies_wind_transfer_nodate,
+	title = {Wind Transmitter "First Class" Advanced X},
+	url = {https://www.thiesclima.com/en/Products/Wind-First-Class/?art=1107},
+	urldate = {2021-10-22},
+	author = {{Thies Clima}},
+}
+
+@manual{manual_thies_wind_direction_transfer_nodate,
+	title = {Wind Direction Transmitter Classic},
+	url = {https://www.thiesclima.com/en/Products/Wind-Classic/?art=278},
+	urldate = {2021-10-24},
+	author = {{Thies Clima}},
+}
+
+@manual{manual_pressure_sensor_RS11-0100,
+	title = {Data Sheet RS Series},
+	url = {https://meritsensor.com/products/RS-Series/},
+	urldate = {2021-11-03},
+	author = {{Merit Sensor}},
+% 	year = {2019},
+}
+
+@manual{manual_humidity_and_temperature_sensor_SHT7x,
+	title = {Datasheet SHT7x (SHT71, SHT75)},
+	url = {https://www.sensirion.com/en/environmental-sensors/humidity-sensors/pintype-digital-humidity-sensors/},
+	urldate = {2021-10-25},
+	author = {{Sensirion}},
+	month = dec,
+	year = {2011},
+}
+
+
+@manual{manual_semiconductor_strain_gauges_BCM_Sensor,
+	title = {Semiconductor Strain Gauges},
+	url = {https://www.bcmsensor.com/products/semiconductor-strain-gauges/semiconductor-strain-gauges/},
+	urldate = {2021-11-16},
+	author = {{BCM Sensor Technologies}},
+% 	year = {2019},
+}
+
+@manual{manual_installation_strain_gauges_BCM_Sensor,
+	title = {Installation of Strain Gauges for Sensor Applications},
+	url = {https://www.bcmsensor.com/products/semiconductor-strain-gauges/semiconductor-strain-gauges/},
+	urldate = {2021-11-16},
+	author = {{BCM Sensor Technologies}},
+% 	year = {2019},
+}
+
+@manual{manual_OTT_Pluvio_2021,
+	title = {OTT Pluvio2 L - Weighing Rain Gauge},
+	url = {https://www.ott.com/en-uk/products/meteorological-sensors-101/ott-pluvio2-l-weighing-rain-gauge-2374/},
+	urldate = {2021-11-17},
+	author = {{OTT HydroMet}},
+	year = {2021},
+}
+
+
+@online{laredo_como_fazer_pluviometro_nodate,
+    author = {Laredo, Gustavo and da Costa, Francisco},
+	title = {Como Fazer: pluviômetro},
+	rights = {Editora Globo S.A.},
+	url = {http://revistagloborural.globo.com/GloboRural/0,6993,EEC1582439-4528-1,00.html},
+	urldate = {2021-11-18},
+% 	file = {Como Fazer:C\:\\Users\\User\\Zotero\\storage\\CPWQCEBF\\0,6993,EEC1582439-4528-1,00.html:text/html},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Outros
+@online{maxim_integrated_application_2002,
+	title = {Application Note - Demystifying Piezoresistive Pressure Sensors},
+	rights = {Maxim Integrated Products, Inc.},
+	url = {https://www.maximintegrated.com/en/design/technical-documents/app-notes/8/871.html},
+	abstract = {Monocrystalline silicon pressure sensors have come into wide use in recent years. Though manufactured with semiconductor technology, they also operate on the resistive principle. The resistance change in a monocrystalline semiconductor (a piezoelectric effect) is substantially higher than that in standard strain gauges, whose resistance changes with geometrical changes in the structure. Conductivity in a doped semiconductor is influenced by a change (compression or stretching of the crystal grid) that can be produced by an extremely small mechanical deformation. Using a signal conditioning integrated circuit to temperature compensate and amplify the signal offers superior performance over discrete circuits.},
+	author = {{Maxim Integrated}},
+	urldate = {2021-11-03},
+	date = {2002-07-17},
+	file = {Demystifying Piezoresistive Pressure Sensors:C\:\\Users\\User\\Zotero\\storage\\8NYTKWXY\\871.html:text/html},
+}
+
+@article{quadros_rainfall_2019,
+	title = {Rainfall trends for the {State} of {Paraná}: present and future climate},
+	volume = {14},
+	issn = {1980-993X},
+	shorttitle = {Rainfall trends for the {State} of {Paraná}},
+	url = {http://www.scielo.br/j/ambiagua/a/vxz7hHMLLTZcYMDRnR6rxQx/?lang=en},
+	doi = {10.4136/ambi-agua.2258},
+	abstract = {Abstract This paper analyzes the variability and the precipitation trend of the State of Paraná, in Brazil. For that, monthly precipitation data belonging to 24 precipitation stations in a 30-year period (1980-2010) were analyzed and they were compared with projections of precipitation for the years 2016-2050. These data were simulated by Eta/Miroc5 for RCP 4.5 (Representative Concentration Pathways) from the Center for Weather Forecasting and Climate Studies CPTEC/INPE and the historical data of precipitation were taken from National Water Agency (ANA). The Mann-Kendall non-parametric test and the Sen’s slope estimator were applied to detect trends and magnitudes, respectively. The Mann-Whitney test was used to compare the median of the historical series (1980-2010) with the simulated series (2016-2050) and the comparison of the means between the two series was performed by Test t. The results draw attention to the great variability and significant changes in the monthly average rainfall that may occur, if the climate change scenarios that were considered become a reality in the near future.},
+	language = {en},
+	urldate = {2021-10-15},
+	journal = {Rev. Ambient. Água},
+	author = {Quadros, Luciana Espindula de and Mello, Eloy Lemos de and Gomes, Benedito Martins and Araujo, Fernanda Cristina},
+	month = apr,
+	year = {2019},
+	note = {Publisher: Instituto de Pesquisas Ambientais em Bacias Hidrográficas},
+	keywords = {climate changes, climate models, precipitation variability.},
+	file = {Full Text PDF:files/24/Quadros et al. - 2019 - Rainfall trends for the State of Paraná present a.pdf:application/pdf;Snapshot:files/25/vxz7hHMLLTZcYMDRnR6rxQx.html:text/html},
+}
+
+@book{organization_wmo_guide_2018,
+	address = {Geneva},
+	edition = {2018 Edition},
+	series = {{World Meteorological Organization}},
+	title = {Guide to {Instruments} and {Methods} of {Observation}},
+	url = {https://library.wmo.int/index.php?lvl=notice_display&id=12407#.YWqedRxXpEa},
+	isbn = {978-92-63-10008-5},
+	publisher = {WMO},
+	author = {{WMO}},
+	year = {2018},
+	file = {Guide to Instruments and Methods of Observation | E-Library:files/27/index.html:text/html},
+}
+
+@misc{almeida_como_2015,
+	title = {Como funcionam as medições de precipitação?},
+	url = {https://meteoropole.com.br/2015/05/como-funcionam-as-medicoes-de-precipitacao/},
+	abstract = {Quando falamos em precipitação, estamos na verdade usando um termo técnico que significa várias coisas.  De acordo com a Organização Meteorológica Mundial, no capítulo 6 da Parte I do WMO GUIDE TO …},
+	urldate = {2021-10-15},
+	journal = {Meteorópole},
+	author = {Almeida, Samantha Novaes Santos Martins},
+	month = may,
+	year = {2015},
+	file = {Snapshot:files/29/como-funcionam-as-medicoes-de-precipitacao.html:text/html},
+}
+
+@misc{hanaoka_variabilidade_2004,
+	title = {Variabilidade {Espacial} e {Temporal} da {Chuva} {Durante} os {Experimentos} {LBA}/{TRMM} 1999 e {LBA}/{RACCI} 2002 na {Amazônia}},
+	url = {http://www.civil.ita.br/graduacao/tgs/resumos/display.php?File=tg2004-04.php},
+	abstract = {This work has for objective to study the space and temporal variation of occured rains in Rondônia during January and February of 1999 (experiment LBA/TRMM) and September and October of 2002 (Experiment LBA/RACCI). So, the data of precipitation with respective schedules of occurrence, geographic localization and rainfall intensity of a net of rain gauges installed in the state of Rondônia had been used. The work consisted of the acquisition of these data, with specific data procedure, analysis of temporal series, horary frequency, daily total precipitation, five-days rain analysis, analysis of the climatologic precipitation variations and temperature and analysis of the correlation between two rain gauges. These analyses have for purpose to characterize the occured rain in the region during the analyzed period, in accordance with the variation of intensity and volume of rain. The analysis of the graphs of horary frequency of occured rains in Porto Velho from January to February of 1999 show a great uniformity of the occurrences during the day, while that from September to October of 2002 the rains concentrated of from 14 until the 20 hours. Already the daily total precipitation graph of occured rains in Vilhena in the same period of 1999 sample that this was a rainier period and with few days without rain while that in the period of 2002 it shows comparativily drier and with more days without rain. The temporal analysis of rains of project LBA/TRMM presents one strong precipitation in day 27 of January in the rain gauges of Cacoal, Alta Floresta, Jarú, Ariquemes and Rio Crespo. This exactly event occurred in Cacoal to the 12 HL, Alta Floresta to the 13 HL, in Jarú to the 14 HL and in Ariquemes and Rio Crespo they had occurred to the 16 HL. The verification of the geographic coordinates points that the event if dislocated in the direction northwest. The precipitation in the fivedays indicates that the corresponding five-days from day 26/10/2002 up to 30/10/2002 had 87\% of the rain gauges with precipitation above of 15 mm, what indicates that the action of the convective activity due to evaporation enclosed a significant area. The analysis of the space variability enters some placed rain gauges next (a circle of 2 km) sample that the correlation between them (always analyzing in pairs) is high (approximately between 0,60 and 0,80), reducing this correlation when the distance between the rain gauges it increases. The curve adjusts is "Correlation = 0,717 - 0,145 ln d", where d is in the distance between rain gauges (km), what it confirms convective caracter of rains during the LBA/TRMM.},
+	urldate = {2021-10-15},
+	author = {Hanaoka, Paulo César de Melo},
+	year = {2004},
+	note = {Trabalho de Conclusão de Curso. (Graduação) – Instituto Tecnológico de Aeronáutica, São José dos Campos.},
+	file = {Divisão de Engenharia Civil do ITA:files/33/display.html:text/html},
+}
+
+@misc{almeida_pluviometro_2011,
+	title = {O que é um pluviômetro?},
+	url = {https://meteoropole.com.br/2011/12/o-que-e-um-pluviometro/},
+	abstract = {Esse post é um complemento do post anterior (leia aqui). Percebi que mais imagens poderiam ser acrescentadas para falar um pouco mais sobre como o registro de chuvas é feito. Pluviômetro é o nome q…},
+	urldate = {2021-10-15},
+	journal = {Meteorópole},
+	author = {Almeida, Samantha Novaes Santos Martins},
+	month = dec,
+	year = {2011},
+	file = {Snapshot:files/35/o-que-e-um-pluviometro.html:text/html},
+}
+
+
+@online{almeida_experiencia_2011,
+	title = {Experiência 4: como construir um pluviômetro?},
+	url = {https://meteoropole.com.br/2011/12/experiencia-4-como-construir-um-pluviometro/},
+	shorttitle = {Experiência 4},
+	abstract = {Vamos começar com aquele post sobre o ciclo hidrológico. Ele é fundamenta para compreender a importância da chuva! Agora que a estação chuvosa está dando as suas caras e que sabemos o que é um pluv…},
+	titleaddon = {Meteorópole},
+	author = {Almeida, Samantha Novaes Santos Martins},
+	urldate = {2021-11-18},
+	date = {2011-12-10},
+	file = {Snapshot:C\:\\Users\\User\\Zotero\\storage\\EDVZPSNM\\experiencia-4-como-construir-um-pluviometro.html:text/html},
+}
+
+
+@misc{kidd_Earth_s_surface_rain_gauges_2014,
+	title = {So, how much of the Earth’s surface is covered by rain gauges?},
+	url = {meetingorganizer.copernicus.org/EGU2014/EGU2014-10300.pdf},
+	abstract = {The measurement of global precipitation, both rainfall and snowfall, is of critical importance to a wide range of users and applications. The fundamental means of measuring precipitation is the rain gauge. Although rain gauges have many drawbacks (including not measuring snowfall well), they remain the de facto source of precipitation information across the Earth surface for hydro-meteorological purposes. While the accuracy and representative of each gauge can be assessed and monitored, a key limitation of rain and snow gauges is in their distribution across the globe. Gauges tend to be limited to the land surface where their distribution and density is very variable, while over the oceans very few gauges are available and measurements available at island locations may not truly represent those of the surrounding oceans.
+	
+	The total numbers of gauges across the Earth, as noted in the literature, varies greatly primarily due to temporal sampling resolutions, periods of operation, the latency of the data and the availability of the data. These numbers range from a few thousand which are available in near real time, to an estimated hundreds of thousands if one includes all available ‘official’ gauges (this number might swell more if all amateur gauges are included, with crowdsourcing capable of providing even more). Considering those gauges that are routinely used in the generation of global precipitation products (i.e. those available and of reasonable quality), the physical area covered by rain gauges varies by a factor of about 25. Calculations suggest that if all available rain gauges are included, they would cover between 120 and 3,000 m2. For comparison, equivalent areas range from 267 m2 for the centre circle of a football (soccer) pitch, or about 260 m2 for a tennis court to about 3,000 m2 for half a football pitch. Each gauge should represent more than just the orifice of the gauge itself, however, observations and modelling suggest that the correlation distance of gauges varies greatly with precipitation regime and integration period. If one takes the GPCC-available gauges (67,000) and assumes that each gauge is independent, and represents a 5 km radius surrounding region, this represents less than 1\% of the Earth’s surface. The situation is further confounded for snowfall which tends to have a larger correlation length and greater measurement uncertainty.},
+	urldate = {2021-10-15},
+	journal = {EGU General Assembly 2014},
+	author = {{Kidd, Chris. et al.}},
+	year = {2014},
+}
+
+
+@online{veen_neural_2016,
+	title = {The Neural Network Zoo},
+	url = {https://www.asimovinstitute.org/neural-network-zoo/},
+	abstract = {With new neural network architectures popping up every now and then, it’s hard to keep track of them all. Knowing all the abbreviations being thrown around ({DCIGN}, {BiLSTM}, {DCGAN}, anyone?) can be a bit overwhelming at first. So I decided to compose a cheat sheet containing many of those architectures. Most of these are neural networks, some are completely […]},
+	titleaddon = {The Asimov Institute},
+	author = {Veen, Fjodor Van},
+	urldate = {2021-10-17},
+	date = {2016-09-14},
+	langid = {american},
+	file = {Snapshot:C\:\\Users\\User\\Zotero\\storage\\24THRP8I\\neural-network-zoo.html:text/html},
+}
+
+@article{scikit-learn,
+ title={Scikit-learn: Machine Learning in {P}ython},
+ author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.
+         and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P.
+         and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and
+         Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
+ journal={Journal of Machine Learning Research},
+ volume={12},
+ pages={2825--2830},
+ year={2011}
+}
+
+
+@online{inmet_sobre_nodate,
+	title = {Instituto Nacional de Meteorologia {\textbar} Sobre},
+	author = {INMET},
+	url = {https://portal.inmet.gov.br/sobre},
+	abstract = {A missão do Instituto Nacional de Meteorologia ({INMET}), órgão do Ministério da Agricultura, Pecuária e Abastecimento, é prover informações meteorológicas à sociedade brasileira e influir construtivamente no processo de tomada de decisão, contribuindo para o desenvolvimento sustentável do País.},
+	titleaddon = {Instituto Nacional de Meteorologia},
+	urldate = {2021-10-23},
+}
+
+@online{inmet_mapa_nodate,
+	title = {{INMET}:: {MAPA} {DAS} {ESTAÇÕES}},
+	author = {INMET},
+	url = {https://mapas.inmet.gov.br/},
+	urldate = {2021-10-21},
+}
+
+@online{inmet_bdmep_nodate,
+	title = {Instituto Nacional de Meteorologia {\textbar} {BDMEP} - Dados Históricos},
+	author = {INMET},
+	url = {https://portal.inmet.gov.br/servicos/bdmep-dados-históricos},
+	abstract = {{BDMEP} - Dados Históricos},
+	titleaddon = {Instituto Nacional de Meteorologia},
+	urldate = {2021-10-23},
+}
+
+
+
+
+@article{liu_wind_1989,
+	title = {Wind Effect on Measured Atmospheric Pressure},
+	volume = {6},
+	issn = {0739-0572, 1520-0426},
+	url = {https://journals.ametsoc.org/view/journals/atot/6/1/1520-0426_1989_006_0005_weomap_2_0_co_2.xml},
+	doi = {10.1175/1520-0426(1989)006<0005:WEOMAP>2.0.CO;2},
+	abstract = {{\textless}section class="abstract"{\textgreater}{\textless}h2 class="{abstractTitle} text-title my-1" id="d155239630e56"{\textgreater}Abstract{\textless}/h2{\textgreater}{\textless}p{\textgreater}Wind generated Pressure inside buildings, normally referred to as “internal pressure” in engineering literature, has a profound effect on the atmospheric pressure measured with indoor barometers during severe storms. The magnitude of the internal pressure is proportional to the dynamic pressure (stagnation pressure) which in turn increases with the square of the wind speed. Normally, this pressure is negative, and it has a magnitude in the neighborhood of 50\% of the stagnation pressure. Its value changes drastically when an opening such as a door or window is opened or broken in high winds. The internal pressure also fluctuates readily with the fluctuations of the external pressure when a large opening exists. Surface pressure measurements taken in severe storms may contain serious errors if this internal pressure effect is not corrected. The paper summarizes latest research findings on internal pressure reported in the literature, and explores their implications to meteorology—especially to the study of severe storms such as hurricanes and tornadoes. Measures to correct or reduce the error generated by internal pressure are also discussed.{\textless}/p{\textgreater}{\textless}/section{\textgreater}},
+	pages = {5--12},
+	number = {1},
+	journaltitle = {Journal of Atmospheric and Oceanic Technology},
+	author = {Liu, Henry and Darkow, Grant L.},
+	urldate = {2021-10-22},
+	date = {1989-02-01},
+	note = {Publisher: American Meteorological Society
+Section: Journal of Atmospheric and Oceanic Technology},
+}
+
+
+
+@article{silva_estacoes_codigo_aberto_2015,
+	title = {Estações meteorológicas de código aberto: Um projeto de pesquisa e desenvolvimento tecnológico},
+	volume = {37},
+	issn = {1806-1117, 1806-9126},
+	url = {http://www.scielo.br/j/rbef/a/Wfzn8wJVbPssRc9WpYKdxPF/?lang=pt},
+	doi = {10.1590/S1806-11173711685},
+	shorttitle = {Estações meteorológicas de código aberto},
+	abstract = {O presente artigo descreve uma experiência de iniciação científica e desenvolvimento tecnológico: a construção de estações meteorológicas baseadas em hardware e software livres com vistas à formação de uma rede de ciência cidadã para monitoramento meteorológico e ambiental. O projeto de pesquisa e desenvolvimento conta com a participação de estudantes de diferentes níveis de ensino e áreas do conhecimento. Os resultados estão relacionados à obtenção de medidas com o primeiro protótipo a partir da plataforma Arduino.},
+	journaltitle = {Revista Brasileira de Ensino de Física},
+	shortjournal = {Rev. Bras. Ensino Fís.},
+	author = {Silva, R. B. and Leal, L. S. and Alves, L. S. and Brandão, R. V. and Alves, R. C. M. and Klering, E. V. and Pezzi, R. P.},
+	urldate = {2021-10-26},
+	date = {2015-03-30},
+	note = {Publisher: Sociedade Brasileira de Física},
+	keywords = {ciência cidadã, instrumentação meteorológica},
+}
+
+
+
+@book{malvino_eletronica_1997,
+	title = {Eletrônica},
+	isbn = {85-346-0378-2},
+	url = {https://search.ebscohost.com/login.aspx?direct=true&db=cat07377a&AN=sabi.000266791&site=eds-live},
+	author = {Malvino, Albert Paul},
+	urldate = {2021-10-26},
+	date = {1997-01-01},
+}
+
+@book{boylestad_dispositivos_2013,
+% Dispositivos eletrônicos e teoria de circuitos / Robert L. Boylestad,
+% Louis Nashelsky; tradução Sônia Midori Yamamoto; revisão técnica
+% Alceu Ferreira Alves. – 11. ed. – São Paulo: Pearson Education
+% do Brasil, 2013.
+% Título original: Electronic devices and circuit theory
+
+	title = {Dispositivos eletrônicos e teoria de circuitos},
+	isbn = {978-85-64574-21-2},
+% 	url = {https://search.ebscohost.com/login.aspx?direct=true&db=cat07377a&AN=sabi.000440432&site=eds-live},
+	author = {Boylestad, Robert L. and Nashelsky, Louis},
+% 	urldate = {2021-10-26},
+	date = {2013},
+}
+
+@book{boylestad_dispositivos_2004,
+	title = {Dispositivos eletrônicos e teoria de circuitos},
+	isbn = {978-85-87918-22-2},
+	url = {https://search.ebscohost.com/login.aspx?direct=true&db=cat07377a&AN=sabi.000440432&site=eds-live},
+	author = {Boylestad, Robert L. and Nashelsky, Louis},
+	urldate = {2021-10-26},
+	date = {2004-01-01},
+}
+
+@article{widlar_exact_expression_1967,  
+    author={Widlar, R.J.},  journal={Proceedings of the IEEE},   title={An exact expression for the thermal variation of the emitter base voltage of bi-polar transistors},   year={1967},  volume={55},  number={1},  pages={96-97},  doi={10.1109/PROC.1967.5396}
+}
+
+@book{géron2019mãos,
+  title={M{\~a}os {\`a} Obra: Aprendizado de M{\'a}quina com Scikit-Learn \& TensorFlow},
+  author={G{\'e}ron, A.},
+  isbn={9788550809021},
+  url={https://books.google.com.br/books?id=Z0mvDwAAQBAJ},
+  year={2019},
+  publisher={Alta Books}
+}
+
+@misc{kingma2017adam,
+      title={Adam: A Method for Stochastic Optimization}, 
+      author={Diederik P. Kingma and Jimmy Ba},
+      year={2017},
+      %eprint={1412.6980},
+      %archivePrefix={arXiv},
+      %primaryClass={cs.LG}
+}
+
+@online{centro_de_tecnologia_academica_projetos_nodate,
+	title = {Projetos do {CTA} {\textbar} O Centro de Tecnologia Acadêmica: princípios e perspectivas},
+	url = {http://www.if.ufrgs.br/~pezzi/CA2015/Projetos_documentados.html},
+	author = {{Centro de Tecnologia Acadêmica}},
+	urldate = {2021-11-08},
+	file = {Projetos do CTA | O Centro de Tecnologia Acadêmica\: princípios e perspectivas:C\:\\Users\\User\\Zotero\\storage\\KAW43ZZ2\\Projetos_documentados.html:text/html},
+}
+
+@online{HBM_ponte_wheatstone,
+	title = {Visão geral sobre strain gauges em lâmina},
+	url = {https://www.hbm.com/pt/7163/circuito-de-ponte-de-wheatstone/},
+	author = {{HBM Test and Measurement}},
+	urldate = {2021-11-18},
+}
+
+@online{HBM_SG,
+	title = {O circuito de ponte de Wheatstone explicado},
+	url = {https://www.hbm.com/pt/7836/strain-gauges-em-lamina-tecnologia-e-tipos/},
+	author = {{HBM Test and Measurement}},
+	urldate = {2021-11-18},
+}
+
+
+
+
+
+@online{MatWeb_overview_PET_nodate,
+	title = {Overview of materials for Polyethylene Terephthalate ({PET}), Unreinforced},
+	author = {{MatWeb}},
+	url = {http://www.matweb.com/search/DataSheet.aspx?MatGUID=a696bdcdff6f41dd98f8eec3599eaa20&ckck=1},
+	urldate = {2021-11-18},
+% 	file = {Overview of materials for Polyethylene Terephthalate (PET), Unreinforced:C\:\\Users\\User\\Zotero\\storage\\XGQ984UM\\DataSheet.html:text/html},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Exercício 16 DATASET
+@misc{dataset_tan_uci_2017,
+	title = {Sales Transactions Dataset Weekly},
+	url = {https://archive.ics.uci.edu/ml/datasets/Sales_Transactions_Dataset_Weekly},
+	abstract = {Contains weekly purchased quantities of 800 over products over 52 weeks. Normalised values are provided too.},
+	urldate = {2022-03-26},
+	journal = {UCI Machine Learning Repository},
+	author = {Tan, James},
+	month = jul,
+	year = {2017},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Artigo que explica o DATASET do exercício 16 ????
+@inproceedings{tan2014time,
+title={Time series clustering: A superior alternative for market basket analysis},
+author={Tan, Swee Chuan and San Lau, Jess Pei},
+booktitle={Proceedings of the First International Conference on Advanced Data and Information Engineering (DaEng-2013)},
+pages={241--248},
+year={2014},
+organization={Springer, Singapore}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Exercício 15 DATASET
+@misc{dataset_charytanowicz_uci_2012,
+	title = {Seeds},
+	url = {https://archive.ics.uci.edu/ml/datasets/seeds},
+	abstract = {Measurements of geometrical properties of kernels belonging to three different varieties of wheat. A soft X-ray technique and GRAINS package were used to construct all seven, real-valued attributes.},
+	urldate = {2022-03-26},
+	journal = {UCI Machine Learning Repository},
+	author = {Charytanowicz, Małgorzata and Niewcza, Jerzy and Kulczyck, Piotr and Kowalski, Piotr A. and Łukasik, Szymon and  ̇Zak, Sławomir   },
+	month = sep,
+	year = {2012},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Capítulo de livro que explica o DATASET do exercício 15
+@inbook{charytanowicz,
+author = {Charytanowicz, Małgorzata and Niewczas, Jerzy and Kulczycki, Piotr and Kowalski, Piotr A. and Łukasik, Szymon and Żak, Sławomir},
+year = {2010},
+month = {01},
+pages = {15-24},
+title = {Complete Gradient Clustering Algorithm for Features Analysis of X-Ray Images},
+volume = {69},
+isbn = {978-3-642-13104-2},
+journal = {Information Technologies in Biomedicine},
+doi = {10.1007/978-3-642-13105-9_2}
+}
+
+
+
+
+@MISC{sklearn_kmeans_ref,
+author = {scikit-learn.org},
+title = {sklearn.cluster.KMeans reference},
+month = mar,
+year = {2022},
+howpublished={\url{https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html}}
+}
