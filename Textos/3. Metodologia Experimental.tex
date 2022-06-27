@@ -43,7 +43,7 @@
 %%\subsection{Definição das especificações do instrumento}
 % A fim de aplicar os conceitos relacionados ao desenvolvimento de Sistemas Especialistas com uso de lógica Fuzzy, são explorados $4$ projetos, cujas propostas e análises dos tratamentos são descrito a seguir.
 
-A fim de aplicar os conceitos relacionados ao desenvolvimento de \textit{Clusters}, são explorados $5$ exercícios, cujas propostas e análises dos tratamentos são descrito a seguir.
+% A fim de aplicar os conceitos relacionados ao desenvolvimento de \textit{Clusters}, são explorados $5$ exercícios, cujas propostas e análises dos tratamentos são descrito a seguir.
 
 % Os dados coletados foram
 
@@ -58,7 +58,8 @@ Esse conjunto de dados da área oncológica contempla análise de células tumor
 
 % contempla medições do consumo de energia elétrica em uma residência com uma taxa de amostragem de um minuto ao longo de um período de quase $4$ anos. Diferentes quantidades elétricas e alguns valores de sub-medição estão disponíveis.
 
-Este arquivo contém $569$ medidas reunidas em uma casa localizada em Sceaux ($7$ km de Paris, França) entre dezembro de $2006$ e novembro de $2010$ ($47$ meses). A Tabela \ref{tab:individual-household-electric-power-consumption} reune algumas informações sobre o conjunto de dados.
+% Este arquivo contém $569$ medidas reunidas em uma casa localizada em Sceaux ($7$ km de Paris, França) entre dezembro de $2006$ e novembro de $2010$ ($47$ meses). 
+A Tabela \ref{tab:Diagnostic-Wisconsin-Breast-Cancer-Database} reúne algumas informações sobre o conjunto de dados.
 
 \input{Tabelas/Diagnostic-Wisconsin-Breast-Cancer-Database}
 
@@ -96,72 +97,179 @@ Para esta análise foi utilizada a linguagem de programação Python v$3.7.13$ n
 
 \input{Tabelas/bibliotecas-python}
 
-Inicialmente, foram carregados os dados através da função \textit{read\_csv} do módulo \textit{pandas} em uma estrutura DataFrame deste. Neste processo, foram fusionadas as colunas 'Date' e 'Time' do conjunto de dados original. Essa nova coluna foi utilizada como index do DataFrame.  
+% Neste processo, foram fusionadas as colunas 'Date' e 'Time' do conjunto de dados original. Essa nova coluna foi utilizada como index do DataFrame.  
 
-Conforme \href{pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html}{pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to\_datetime.html}, definir o parâmetro \textit{infer\_datatime\_format} como verdadeiro pode aumentar a velocidade da etapa de \textit{parsing} entre $5$ à $10$ vezes, de modo que esse parametro foi setado.
+% Conforme \href{pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html}{pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to\_datetime.html}, definir o parâmetro \textit{infer\_datatime\_format} como verdadeiro pode aumentar a velocidade da etapa de \textit{parsing} entre $5$ à $10$ vezes, de modo que esse parametro foi setado.
 
-Os pontos de '?' presentes no dataset para o caso de ausência de dados foram transformados em \textit{numpy.nan}, afim de que todas os elementos fossem de um único tipo (ponto flutuante, no caso).
+% Os pontos de '?' presentes no dataset para o caso de ausência de dados foram transformados em \textit{numpy.nan}, afim de que todas os elementos fossem de um único tipo (ponto flutuante, no caso).
 
-Então, uma nova coluna foi criada, Sub\_metering\_4, correspondente  a energia ativa consumida a cada minuto (em watt hora) na casa por equipamentos elétricos não medidos nos sub-medidores 1, 2 e 3.
+\subsection{Exercício ii}
 
-Esse novo dataset foi salvo como o nome "household\_power\_consumption.csv" e foi utilizado na sequência em um novo DataFrame.
+Este exercício consiste executar e avaliar o código fornecido para construir um pipeline de um modelo inteligente qualquer para classificar os dados desbalanceados do \textit{dataset}.
 
-Utilizando a função \textit{pandas.DataFrame.resample} com os parâmetros 'H' e 'D', dois novos DataFrames foram criados baseados na média dos valores horários e diários.
+Inicialmente, foram carregados os dados através da função \textit{read\_csv} do módulo \href{https://pandas.pydata.org/}{\textit{pandas}} em uma estrutura DataFrame deste.
 
-Então, foram plotadas os gráficos das variáveis em função do tempo para o DataFrame com intervalo por minuto e para os dois novos DataFrames.
+As características de cada observação foram foram armazenadas em um Dataframe ($X$), enquanto os rótulos ($y$), foram armazenados em uma estrutura Series do módulo \textit{pandas}.
 
-Também foram criados os histogramas e um mapa de correlações entre cada uma das variáveis, afim de determinar quais poderiam ser utilizadas na etapa de agregação.
+A classe \textit{\href{https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html}{LabelEncoder}} do \href{https://scikit-learn.org/stable/index.html}{\textit{scikit-learn}} \citep{scikit-learn} foi utilizada para codificar etiquetas dos rótulos 'M' e 'B' nos valores $0$ e $1$.
 
-Selecionadas as características, e tendo sido selecionado o intervalo horário, como utilizado por \cite{jain_forecasting_2014} , procedeu-se a normalização dos dados entre 0 e 1. As linhas não utilizadas anteriormente, contendo \textit{numpy.nan}, foram descartas considerando-se que  correspondiam a um percentual pequeno da base de dados.
+Os dados são então divididos através da função \href{https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html}{\textit{train\_test\_split}}, com a proporção de $80\%$ dos dados para o conjunto de treinamento e $20\%$ para o conjunto de teste. As frequências relativas de classe são aproximadamente preservadas em cada conjunto de treinamento e teste, através da passagem de $y$ para o parâmetro \textit{stratify}.
 
-A métrica de distância foi definida como a distância euclidiana, como em \cite{beckel_revealing_cluster_2014}.
+Em seguida, uma pipeline, isto é, uma estrutura contendo uma lista de transformações com um estimador final é elaborada para o processamento dos dados. Para tal, é utilizada a classe \href{https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline}{\textit{Pipeline}} do \textit{scikit-learn}.  
 
-Neste exercício, o algoritmo de agrupamento k-means foi utilizado. No exercício 11, descrito a seguir, o método de agrupamento k-medoids (PAM) foi utilizado.
+Ela é construída através do método \href{https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.make_pipeline.html}{\textit{make\_pipeline}} e  contempla as seguintes classes do \textit{scikit-learn}:
+\begin{itemize}
+    \item normalização dos dados através da \href{https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html}{\textit{StandardScaler}}, que remove o valor médio das amostras (centralização) e realiza o escalonamento para variância unitária de cada característica;
+    \item uma etapa de Análise de componentes principais (ACP) ou \textit{Principal Component Analysis} (PCA) para redução do número de características para duas componentes principais através da \href{https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html}{\textit{PCA}};
+    \item classificador.
+\end{itemize}
 
-O Coeficiente de Silhueta foi então analisado para diversos valores de k, bem como a métrica de dispersão \textit{Within Cluster Sum of Squares}, gerando uma "curva do cotovelo". 
+No caso do \textit{Exercício ii}, este classificador é baseado em uma regressão logística, utilizando-se para tal a classe \href{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html}{\textit{LogisticRegression}}.
 
-O comportamento obtido, bem como os histogramas elaborados anteriormente e a utilização $5$ clusters por \cite{beckel_revealing_cluster_2014} foram então utilizados para determinar o número de clusters final.
+Como métrica principal, inicialmente foi selecionada a \textit{accuracy}.
 
-Com os dados classificados, é possível utilizar o método KNN. Esse método pode ser treinado com a técnica k-fold. Os dados  foram separados em um conjunto de teste e um conjunto de treinamento. Houve a divisão dos dados em dez lotes utilizando o recurso de validação cruzada da biblioteca "Scikit Learn". De forma que se pudesse garantir que a pseudo-aleatoriedade não afetasse o teste assim o valor utilizado como referência foi a média de $10$ rodadas de testes. O uso do K-fold é especialmente interessante para a comparação deste exercício $4$ com o exercício $11$.
+A função \href{https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html}{\textit{classification\_report}} do módulo \textit{scikit-learn} foi utilizada, exibindo além da \textit{accuracy}, \textit{precision}, \textit{recall} e \textit{f1-score}.
+
+As matrizes de confusão também são exibidas utilizando-se para tal a função \href{https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html}{\textit{confusion\_matrix}} do módulo \textit{scikit-learn}.
+
+\subsection{Exercício iii}
+
+O \textit{Exercício iii} consiste em avaliar o impacto de outros modelos inteligentes pertinentes na classificação da base desbalanceada utilizada anteriormente.
+
+% O código desenvolvido para cada modelo proposto e avaliar o impacto dos mesmos na classificação e evidentemente da base desbalanceada utilizada.
+
+Dois modelos do módulo \textit{scikit-learn} foram selecionados:
+\begin{itemize}
+    \item classificador baseado em  Máquina de vetores de suporte (SVM, do inglês \textit{Support Vector Machine}) -  \href{https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn-svm-svc}{\textit{SVC}};
+    \item classificador Random Forest, meta-classificador baseado em um conjunto de árvores de decisão - \href{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html}{\textit{RandomForestClassifier}}
+\end{itemize}
+
+Como destaca \citet{scikit-learn-svn}, a escolha de $C$ e gamma é crítica para a performance da SVM, sendo recomendado por exemplo o uso da pesquisa em rede com $C$ e gamma espaçados exponencialmente para escolha de parâmetros adequados.
+
+Dessa forma, também foi utilizada uma pesquisa em rede para a obtenção de uma SVM otimizada para o problema.
+
+A \textit{accuracy}, bem como a  matriz de confusão  e o \textit{classification\_report}, são analisados para esses modelos.
+
+Os códigos baseados nos modelos foram disponibilizado nos anexos. Esses códigos foram gerados em \textit{notebooks} no Colab e foram transcritos em arquivo \textit{python} para fins exibição. Assim, por exemplo, o arquivo \textit{funcoes\_geracao\_tabelas\_LaTeX.py} não existia no Colab e não havia necessidade de realizar sua importação.
+
+\subsection{Exercício iv}
+
+Neste exercício, busca-se evidenciar o problema do desbalanceamento de dados.
+
+São anexados verticalmente $40$ dados da classe $1$ (usando a função do \textit{numpy} \href{https://numpy.org/doc/stable/reference/generated/numpy.vstack.html}{\textit{vstack}}) à classe $0$ ($357$ amostras) gerando um total de $397$ instâncias ou dados. Da mesma forma, são anexados horizontalmente $40$ dados da classe $1$ (tumor maligno) aos $357$ dados da classe $0$ (tumor benigno) usando a função do numpy \href{https://numpy.org/doc/stable/reference/generated/numpy.hstack.html}{\textit{hstack}}.
+
+Exibe-se então o percentual de instâncias pertencentes a primeira classe (com $357$ dados) do total.
+
+Os dados são então divididos através da função \href{https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html}{\textit{train\_test\_split}}, guardando-se a proporção de $80\%$ dos dados para o conjunto de treinamento e $20\%$ para o conjunto de teste. As frequências relativas de classe também são aproximadamente preservadas.
+
+Na sequência, os dados passam pela mesma pipeline do \textit{Exercício ii}, com o classificador baseado em regressão logística. 
+
+A \textit{accuracy}, bem como a  matriz de confusão  e o \textit{classification\_report}, são analisados para esse modelo.
+
+\subsection{Exercício v}
+
+Neste exercício, busca-se evidenciar a dependência da proporção do desbalanceamento de dados no desempenho de um modelo inteligente. Para tal, outras duas configurações de divisão saõ utilizadas, porém mantendo a classe $0$ com seu tamanho original, $357$ amostras do dataset original, ou seja, com a adição de um número de dados $z$ da classe $1$ anexados a cada array.
+
+Foram utilizados $z$ igual à $80$ e $120$, que podem ser comparados ao exercício anterior, onde $z = 40$ e ao \textit{Exercício ii}, para o qual $z = 212$ 
+
+Os demais procedimentos são análogos ao do \textit{Exercício iv}.
+
+\subsection{Exercício vi}
+
+A função \href{https://scikit-learn.org/stable/modules/generated/sklearn.utils.resample.html}{\textit{resample}} do módulo \textit{scikit-learn} para re-amostragem de dados pode ser utilizada para auxiliar no problema relacionado as classes desbalanceadas ou ao menos apresentar o resultado de uma métrica de desempenho “mais realista” ao problema de interesse.
+
+Esta função pode auxiliar com o upsampling da classe minoritária. Nesse caso, estamos “criando” novas amostras sintéticas ao conjunto de dados.
+
+Exibe-se então o percentual de instâncias pertencentes a classe $1$ (minoritária) antes e após a reamostragem, que dá origem a um total de $357$ dados para a classe $1$, totalizando $714$ dados das duas classes.
+
+Um novo array é criado através da função do \textit{numpy} \href{https://numpy.org/doc/stable/reference/generated/numpy.vstack.html}{\textit{vstack}}, pela qual são anexados verticalmente os dados da classe $0$ com os dados reamostrados da classe $1$.  Da mesma forma, são anexados horizontalmente os dados da classe $1$ (tumor maligno) reamostrados aos $357$ dados da classe $0$ (tumor benigno) usando a função do \textit{numpy} \href{https://numpy.org/doc/stable/reference/generated/numpy.hstack.html}{\textit{hstack}}.
+
+Os dados são então divididos através da função \href{https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html}{\textit{train\_test\_split}}, guardando-se a proporção de $80\%$ dos dados para o conjunto de treinamento e $20\%$ para o conjunto de teste. As frequências relativas de classe também são aproximadamente preservadas.
+
+Na sequência, os dados passam pela mesma pipeline do \textit{Exercício ii}, com o classificador baseado em regressão logística. 
+
+A \textit{accuracy}, bem como a  matriz de confusão  e o \textit{classification\_report}, são analisados para esse modelo.
+% Abrir o ambiente de programação Python, digitar o correspondente código e analisar o mesmo 
+
+\subsection{Exercício vii}
+
+Também seria possível reduzir o tamanho amostral da classe Majoritária (classe $0$) para a etapa de treinamento.
+
+A função \href{https://scikit-learn.org/stable/modules/generated/sklearn.utils.resample.html}{\textit{resample}} é utilizada nesse caso para reduzir o número de elementos da classe $0$ até $212$. Para tanto, os elementos da classe $0$ de $X$ e de $y$ são passados para \textit{resample}, com o número de amostras definidos como o número de elementos da classe $1$, isto é $212$.
+
+Exibe-se então o percentual de instâncias pertencentes a classe $0$ (minoritária) antes e após a reamostragem, totalizando $424$ dados das duas classes.
+
+Um novo array é criado através da função do \textit{numpy} \href{https://numpy.org/doc/stable/reference/generated/numpy.vstack.html}{\textit{vstack}}), pela qual são anexados verticalmente os dados da classe $0$ com os dados reamostrados da classe $1$. Da mesma forma, são anexados horizontalmente os dados da classe $1$ (tumor maligno) aos $212$ dados da classe $0$ (tumor benigno) reamostrados usando a função do \textit{numpy} \href{https://numpy.org/doc/stable/reference/generated/numpy.hstack.html}{\textit{hstack}}.
 
 
-% Nesta etapa, a métrica Mean absolute percentage error (MAPE) foi utilizada. Está métrica está disponível no módulo \textit{sklearn} 
-% \href{https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_percentage_error.html}{https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean\_absolute\_percentage\_error.html}
+Os dados são então divididos através da função \href{https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html}{\textit{train\_test\_split}}, guardando-se a proporção de $80\%$ dos dados para o conjunto de treinamento e $20\%$ para o conjunto de teste. As frequências relativas de classe também são aproximadamente preservadas.
 
-Nesta etapa, a métrica "acurracy" \ foi utilizada, ao invés da métrica MAPE, tendo em vista que, para o método K-NN, as classes determinadas anteriormente são utilizadas.
+Na sequência, os dados passam pela mesma pipeline do \textit{Exercício ii}, com o classificador baseado em regressão logística. 
+
+A \textit{accuracy}, bem como a  matriz de confusão  e o \textit{classification\_report}, são analisados para esse modelo.
+
+\subsection{Exercício viii}
+
+A base de dados desbalanceada com diversa informações socioeconômicas “adultoUCI.csv” \ foi disponibilizada aos alunos.
+
+Este exercício consiste executar e avaliar o código fornecido para construir um pipeline de um modelo inteligente qualquer para classificar os dados desbalanceados do \textit{dataset}.
+
+Inicialmente, foram carregados os dados através da função \textit{read\_csv} do módulo \href{https://pandas.pydata.org/}{\textit{pandas}} em uma estrutura DataFrame deste.
+
+Após eliminação das linhas com valores ausentes, obtém-se o número de elementos de cada classe: aqueles que recebem um valor em uma dada unidade monetária menor ou igual à $50$ mil pertencerão a classe $0$, enquanto aqueles que recebem mais de $50$ mil pertencerão a classe $I$.
 
 
-\subsection{Exercício 11}
+A classe \textit{\href{https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html}{LabelEncoder}} do \href{https://scikit-learn.org/stable/index.html}{\textit{scikit-learn}} \citep{scikit-learn} foi utilizada para codificar etiquetas dos rótulos de cada característica.
 
-O Exercício 11 aborda a mesma situação do exercício 4, porém utilizando o método PAM com k-memoids.
 
-Os mesmos módulos utilizados no exercício 4 foram utilidos, com a adição do módulo sklearn\_extra para a utilização do método k-memoids com parâmetro.
+As características de cada observação foram foram armazenadas em um Dataframe ($X$), com exceção da característica de renda (\textit{income}),que corresponde ao rótulo ($y$), e foi armazenada em uma estrutura Series do módulo \textit{pandas}.
 
-O mesmo código foi utilizado, substituindo-se as referências a k-means por K-medoids. O objetivo foi comparar duas versões otimizadas do algoritmos em bibliotecas estabelecidas e seus resultados para a aplicação em questão.
+Os dados são então divididos através da função \href{https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html}{\textit{train\_test\_split}}, com a proporção de $80\%$ dos dados para o conjunto de treinamento e $20\%$ para o conjunto de teste. 
+% As frequências relativas de classe são aproximadamente preservadas em cada conjunto de treinamento e teste, através da passagem de $y$ para o parâmetro \textit{stratify}.
 
-O Coeficiente de Silhueta foi então analisado para diversos valores de k, bem como a métrica de dispersão \textit{Within Cluster Sum of Squares}, gerando uma "curva do cotovelo".
+Em seguida, um classificador Random Forest (\href{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html}{\textit{RandomForestClassifier}}) é utilizado.
 
-Com os dados classificados, é possível utilizar o método KNN. Esse método pode ser treinado com a técnica k-fold. Os dados  foram separados em um conjunto de teste e um conjunto de treinamento. Houve a divisão dos dados em dez lotes utilizando o recurso de validação cruzada da biblioteca "Scikit Learn". De forma que se pudesse garantir que a pseudo-aleatoriedade não afetasse o teste, o valor utilizado como referência foi a média de $10$ rodadas de testes. O uso do K-fold é especialmente interessante para a comparação dos resultados deste exercício $11$ com o exercício $4$.
+% Em seguida, uma pipeline, isto é, uma estrutura contendo uma lista de transformações com um estimador final é elaborada para o processamento dos dados. Para tal, é utilizada a classe \href{https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline}{\textit{Pipeline}} do \textit{scikit-learn}.  
 
-Novamente, a métrica "accuracy" \ foi utilizada.
+% Ela é construída através do método \href{https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.make_pipeline.html}{\textit{make\_pipeline}} e  contempla as seguintes classes do \textit{scikit-learn}:
+% \begin{itemize}
+%     \item normalização dos dados através da \href{https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html}{\textit{StandardScaler}}, que remove o valor médio das amostras (centralização) e realiza o escalonamento para variância unitária de cada característica;
+%     \item uma etapa de Análise de componentes principais (ACP) ou \textit{Principal Component Analysis} (PCA) para redução do número de características para duas componentes principais através da \href{https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html}{\textit{PCA}};
+%     \item classificador.
+% \end{itemize}
 
-\subsection{Exercício 12: Implementação do k-means}
-Uma implementação do k-means com o pseudocódigo visto em aula foi realizada. Foi solicitado buscar o que poderia ser otimizado. O algorítmo foi comparado com as funções do scikit-learn disponíveis na documentação oficial.
+% No caso do \textit{Exercício ii}, este classificador é baseado em uma regressão logística, utilizando-se para tal a classe \href{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html}{\textit{LogisticRegression}}.
 
-\subsection{Exercício 15: Sementes}
+Como métrica principal, inicialmente foi selecionada a \textit{accuracy}.
 
-O Exercício 15 é feito com base no dataset \href{https://archive.ics.uci.edu/ml/datasets/seeds}{Seeds} \citep{dataset_charytanowicz_uci_2012}. Consiste num conjunto de medidas de 210 sementes de trigo, sendo 70 de cada uma das três variedades: Kama, Rosa e Canadense. Poucos detalhes puderam ser encontrados sobre essas variedades, aparentam ser variedades comerciais de trigo disponíveis no local do estudo. Sete características geométricas foram aferidas: (1) Área A, (2) Perímetro P, (3) Compacidade = $\frac{4\pi A}{P^2}$, (4) Comprimento, (5) Largura, (6) Coeficiente de assimetria e (7) Comprimento da fenda, sendo todos os parâmetros reais e contínuos.
+A função \href{https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.htmll}{\textit{classification\_report}} do módulo \textit{scikit-learn} foi utilizada, exibindo além da \textit{accuracy}, \textit{precision}, \textit{recall} e \textit{f1-score}.
 
-Segundo \citep{charytanowicz} os dados foram obtidos através de imagens de raio-x registradas em placas KODAK de tamanho 13x18cm, que foram escaneadas posteriormente e processadas com o pacote de software GRAINS, desenvolvido especialmente para avaliar grãos do tipo. O método de imagem via raio-x permite analisar o interior do grão e é mais barato que outros métodos como os baseados em laser e microscopia\citep{charytanowicz}.
+A matrize de confusão também é exibida utilizando-se para tal a função \href{https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html}{\textit{confusion\_matrix}} do módulo \textit{scikit-learn}.
 
-Partindo da premissa que são três variedades esperadas, o valor k para o algorítimo k-means escolhido foi 3. Executou-se o kmeans com todos os dados geométricos disponíveis, todos os dados geométricos normalizados e por fim escolheu-se as duas características com coeficiente de correlação mais próximo de 0 e a característica da área a fim de avaliar o método com número menor de variáveis.
+\subsection{Exercício ix}
 
-Assim criou-se 4 conjuntos de clusters e o desempenho foi avaliado com a etiqueta das sementes definida no conjunto de dados usando as métricas \textit{Adjusted Rand Index (ARI)} e \textit{Adjusted Mutual Info}.
+O \textit{Exercício ix} consiste em avaliar o impacto de outros modelos inteligentes pertinentes na classificação da base desbalanceada utilizada anteriormente.
 
-\subsection{Exercício 16: Vendas}
+% O código desenvolvido para cada modelo proposto e avaliar o impacto dos mesmos na classificação e evidentemente da base desbalanceada utilizada.
 
-O Exercício 16 usa a base de dados Foi selecionada a base de dados  \href{https://archive.ics.uci.edu/ml/datasets/Sales_Transactions_Dataset_Weekly}{Sales{\_}Transactions{\_}Dataset{\_}Weekly} \citep{dataset_tan_uci_2017}.
+Dois modelos do módulo \textit{scikit-learn} foram selecionados:
+\begin{itemize}
+    \item classificador baseado em  Máquina de vetores de suporte (SVM, do inglês \textit{Support Vector Machine}) -  \href{https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn-svm-svc}{\textit{SVC}};
+    \item classificador baseado em regressão Logística.
+\end{itemize}
 
-São valores de 52 semanas, normalizados e não normalizados para 811 produtos. Os valores  foram usados para gerar clusters com produtos através do algoritmo k-means implementado pela biblioteca sklearn. Cada ponto no conjunto é relacionado a um produto, dessa forma ao se agrupar por vendas por semana espera-se encontrar produtos de venda correlacionada e com métricas intrínsecas ao agrupamento tentar encontrar a quantidade de clusters adequada.
+% Como destaca \citet{scikit-learn-svn}, a escolha de $C$ e gamma é crítica para a performance da SVM, sendo recomendado por exemplo o uso da pesquisa em rede com $C$ e gamma espaçados exponencialmente para escolha de parâmetros adequados.
 
-Após, colheu-se as métricas de \textit{WCSS} e medida de silhueta média. Traçou-se então as curvas relacionas ao número do valor k e os resultados das métricas.
+Também foi utilizada pesquisa em rede para a obtenção de uma SVM otimizada para o problema, tendo em vista que, como destaca \citet{scikit-learn-svn}, a escolha de $C$ e gamma é crítica para a performance da SVM.
+
+A \textit{accuracy}, bem como a  matriz de confusão  e o \textit{classification\_report}, são analisados para esses modelos.
+
+Os códigos baseados nos modelos foram disponibilizado nos anexos. Esses códigos foram gerados em \textit{notebooks} no Colab e foram transcritos em arquivo \textit{python} para fins exibição. Assim, por exemplo, o arquivo \textit{funcoes\_geracao\_tabelas\_LaTeX.py} não existia no Colab e não havia necessidade de realizar sua importação.
+
+\subsection{Exercício x}
+
+A função \href{https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html}{\textit{compute\_class\_weight}} permite estimar o peso das classes em datasets desbalanceados.
+
+De modo geral, os modelos inteligentes do módulo \textit{sckit-learn} possuem um parâmetro \textit{class\_weight} que permite atribuir uma penalidade para cada previsão errada relacionada a classe minoritária.
+
+Desta forma, o \textit{Exercício viii} é revisitado, utilizando-se agora no  classificador Random Forest (\href{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html}{\textit{RandomForestClassifier}}) o parâmetro \textit{class\_weight} com os valores "\textit{balanced}" \ e "\textit{balanced\_subsample}".
